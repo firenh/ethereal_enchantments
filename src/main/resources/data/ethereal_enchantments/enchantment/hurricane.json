@@ -1,0 +1,112 @@
+{
+    "description": {
+        "translate": "enchantment.ethereal_enchantments.hurricane",
+        "fallback": "Hurricane"
+    },
+    "supported_items": "#minecraft:enchantable/trident",
+    "weight": 1,
+    "max_level": 3,
+    "min_cost": {
+        "base": 25,
+        "per_level_above_first": 0
+    },
+    "max_cost": {
+        "base": 50,
+        "per_level_above_first": 0
+    },
+    "anvil_cost": 8,
+    "slots": [
+        "mainhand"
+    ],
+    "effects": {
+        "minecraft:post_attack": [
+            {
+                "enchanted": "attacker",
+                "affected": "victim",
+                "effect": {
+                    "type": "minecraft:explode",
+                    "radius": {
+                        "type": "minecraft:lookup",
+                        "values": [
+                            2,
+                            3.25,
+                            4.5
+                        ],
+                        "fallback": {
+                            "type": "minecraft:linear",
+                            "base": 2,
+                            "per_level_above_first": 2
+                        }
+                    },
+                    "offset": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "block_interaction": "trigger",
+                    "small_particle": {
+                        "type": "minecraft:gust_emitter_small"
+                    },
+                    "large_particle": {
+                        "type": "minecraft:gust_emitter_large"
+                    },
+                    "sound": "minecraft:entity.wind_charge.wind_burst",
+                    "knockback_multiplier": {
+                        "type": "minecraft:linear",
+                        "base": 0.33333,
+                        "per_level_above_first": 0.3333333
+                    },
+                    "attribute_to_user": true,
+                    "create_fire": false
+                }
+            }
+        ],
+        "minecraft:hit_block": [
+            {
+                "requirements": {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:entity_type": "minecraft:trident"
+                    }
+                },
+                "effect": {
+                    "type": "minecraft:explode",
+                    "radius": {
+                        "type": "minecraft:linear",
+                        "base": 1.5,
+                        "per_level_above_first": 1.5
+                    },
+                    "offset": [
+                        0,
+                        0.1,
+                        0
+                    ],
+                    "block_interaction": "trigger",
+                    "small_particle": {
+                        "type": "minecraft:gust_emitter_small"
+                    },
+                    "large_particle": {
+                        "type": "minecraft:gust_emitter_large"
+                    },
+                    "sound": "minecraft:entity.wind_charge.wind_burst",
+                    "knockback_multiplier": {
+                        "type": "minecraft:lookup",
+                        "values": [
+                            1,
+                            1.5,
+                            2
+                        ],
+                        "fallback": {
+                            "type": "minecraft:linear",
+                            "base": 0,
+                            "per_level_above_first": 1
+                        }
+                    },
+                    "attribute_to_user": true,
+                    "create_fire": false
+                }
+            }
+        ]
+    }
+}

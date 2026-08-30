@@ -3,7 +3,9 @@
 	"package": "aetherales.etherealenchantments.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"EnchantmentHelperMixin",
+		"EnchantmentLocationBasedEffectMixin",
+		"EnchantmentsMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
