@@ -4,7 +4,7 @@
         "fallback": "Hurricane"
     },
     "supported_items": "#minecraft:enchantable/trident",
-    "weight": 1,
+    "weight": 3,
     "max_level": 3,
     "min_cost": {
         "base": 25,

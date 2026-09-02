@@ -1,7 +1,7 @@
 {
     "anvil_cost": 2,
     "description": {
-        "translate": "enchantment.ethereal_enchantments.hurricane",
+        "translate": "enchantment.ethereal_enchantments.brutality",
         "fallback": "Brutality"
     },
     "effects": {

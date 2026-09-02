@@ -1,0 +1,47 @@
+{
+    "anvil_cost": 4,
+    "description": {
+        "translate": "enchantment.ethereal_enchantments.knowledge",
+        "fallback": "Knowledge"
+    },
+    "effects": {
+        "minecraft:mob_experience": [
+            {
+                "effect": {
+                    "type": "minecraft:multiply",
+                    "factor": {
+                        "type": "minecraft:linear",
+                        "base": 1.33333,
+                        "per_level_above_first": 0.33333
+                    }
+                }
+            }
+        ],
+        "minecraft:block_experience": [
+            {
+                "effect": {
+                    "type": "minecraft:multiply",
+                    "factor": {
+                        "type": "minecraft:linear",
+                        "base": 1.33333,
+                        "per_level_above_first": 0.33333
+                    }
+                }
+            }
+        ]
+    },
+    "max_cost": {
+        "base": 65,
+        "per_level_above_first": 9
+    },
+    "max_level": 3,
+    "min_cost": {
+        "base": 15,
+        "per_level_above_first": 9
+    },
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "#ethereal_enchantments:enchantable/knowledge",
+    "weight": 2
+}

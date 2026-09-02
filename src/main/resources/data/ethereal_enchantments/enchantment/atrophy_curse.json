@@ -8,11 +8,11 @@
     "max_level": 5,
     "min_cost": {
         "base": 5,
-        "per_level_above_first": 8
+        "per_level_above_first": 18
     },
     "max_cost": {
-        "base": 55,
-        "per_level_above_first": 8
+        "base": 25,
+        "per_level_above_first": 18
     },
     "anvil_cost": 0,
     "slots": [
@@ -24,8 +24,9 @@
                 "effect": {
                     "type": "minecraft:add",
                     "value": {
-                        "type": "minecraft:levels_squared",
-                        "added": 1
+                        "type": "minecraft:linear",
+                        "base": 1,
+                        "per_level_above_first": 1
                     }
                 }
             }
