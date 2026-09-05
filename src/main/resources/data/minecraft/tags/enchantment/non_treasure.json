@@ -4,6 +4,9 @@
         "ethereal_enchantments:atrophy_curse",
         "ethereal_enchantments:brutality",
         "ethereal_enchantments:hurricane",
-        "ethereal_enchantments:knowledge"
+        "ethereal_enchantments:knowledge",
+        "ethereal_enchantments:stunning",
+        "ethereal_enchantments:frenzy",
+        "ethereal_enchantments:venomous"
     ]
 }

@@ -19,6 +19,9 @@ import java.util.List;
 public class EEEnchantments {
     public static final ResourceKey<Enchantment> OBLITERATION = key("obliteration_curse");
     public static final ResourceKey<Enchantment> AFFLICTION = key("affliction");
+    public static final ResourceKey<Enchantment> UNWIELDINESS_CURSE = key("unwieldiness_curse");
+    public static final ResourceKey<Enchantment> BUTTERFINGERS_CURSE = key("butterfingers_curse");
+    public static final ResourceKey<Enchantment> FRENZY = key("frenzy");
 
 
     private static ResourceKey<Enchantment> key(final String id) {

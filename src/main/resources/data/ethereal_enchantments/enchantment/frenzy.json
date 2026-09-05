@@ -1,0 +1,22 @@
+{
+    "anvil_cost": 8,
+    "description": {
+        "translate": "enchantment.ethereal_enchantments.frenzy",
+        "fallback": "Frenzy"
+    },
+    "effects": {},
+    "max_cost": {
+        "base": 10,
+        "per_level_above_first": 15
+    },
+    "max_level": 5,
+    "min_cost": {
+        "base": 5,
+        "per_level_above_first": 10
+    },
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "#minecraft:enchantable/mining",
+    "weight": 1
+}

@@ -1,13 +1,8 @@
 package aetherales.etherealenchantments;
 
-import aetherales.etherealenchantments.enchantmentcomponents.EEEnchantmentEffects;
-import aetherales.etherealenchantments.enchantmentcomponents.TransferStatusEffects;
 import aetherales.etherealenchantments.impl.EEServerTicks;
-import aetherales.etherealenchantments.util.EEUtil;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
