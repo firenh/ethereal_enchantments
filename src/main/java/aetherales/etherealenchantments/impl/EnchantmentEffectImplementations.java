@@ -1,5 +1,6 @@
 package aetherales.etherealenchantments.impl;
 
+import aetherales.etherealenchantments.entitydata.MomentumData;
 import aetherales.etherealenchantments.registry.EEEnchantments;
 import aetherales.etherealenchantments.util.EnchantmentUtil;
 import net.minecraft.server.level.ServerLevel;
@@ -57,6 +58,7 @@ public class EnchantmentEffectImplementations {
     ) {
         if (!Objects.isNull(owner) && owner instanceof Player player) {
             FrenzyImpl.frenzyImpl(weapon, player);
+            MomentumData.updateTime(player, weapon);
         }
     }
 

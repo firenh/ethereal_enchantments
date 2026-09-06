@@ -4,7 +4,7 @@
         "fallback": "Curse of Atrophy"
     },
     "supported_items": "#minecraft:enchantable/durability",
-    "weight": 1,
+    "weight": 3,
     "max_level": 5,
     "min_cost": {
         "base": 5,

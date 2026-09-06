@@ -6,6 +6,7 @@
         "EnchantmentHelperMixin",
         "ItemMixin",
         "ItemStackMixin",
+        "PlayerAccessor",
         "PlayerMixin"
     ],
     "injectors": {
