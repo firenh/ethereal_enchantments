@@ -1,0 +1,22 @@
+{
+    "anvil_cost": 8,
+    "description": {
+        "translate": "enchantment.ethereal_enchantments.soulbound",
+        "fallback": "Soulbound"
+    },
+    "effects": {},
+    "max_cost": {
+        "base": 50,
+        "per_level_above_first": 50
+    },
+    "max_level": 1,
+    "min_cost": {
+        "base": 25,
+        "per_level_above_first": 15
+    },
+    "slots": [
+        "any"
+    ],
+    "supported_items": "#minecraft:enchantable/vanishing",
+    "weight": 10
+}

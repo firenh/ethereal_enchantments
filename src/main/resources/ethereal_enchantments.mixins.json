@@ -6,8 +6,10 @@
         "EnchantmentHelperMixin",
         "ItemMixin",
         "ItemStackMixin",
+        "LivingEntityMixin",
         "PlayerAccessor",
-        "PlayerMixin"
+        "PlayerMixin",
+        "ServerPlayerMixin"
     ],
     "injectors": {
         "defaultRequire": 1

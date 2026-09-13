@@ -99,6 +99,8 @@ public class MomentumData {
     }
 
     private static void clearStreak(Player player) {
+        if (Objects.isNull(((PlayerAccessor)(Object)player).getMomentumData())) return;
+
         MomentumData momentumData = ((PlayerAccessor)(Object)player).getMomentumData();
         momentumData.setStreak(0);
         momentumData.setTarget(Optional.empty());

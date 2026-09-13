@@ -23,6 +23,7 @@ public class EEEnchantments {
     public static final ResourceKey<Enchantment> BUTTERFINGERS_CURSE = key("butterfingers_curse");
     public static final ResourceKey<Enchantment> FRENZY = key("frenzy");
     public static final ResourceKey<Enchantment> MOMENTUM = key("momentum");
+    public static final ResourceKey<Enchantment> SOULBOUND = key("soulbound");
 
 
     private static ResourceKey<Enchantment> key(final String id) {

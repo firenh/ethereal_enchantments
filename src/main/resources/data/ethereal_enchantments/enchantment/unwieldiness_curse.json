@@ -5,12 +5,12 @@
         "fallback": "Curse of Unwieldiness"
     },
     "effects": {},
-    "max_cost": {
-        "base": 50,
+    "min_cost": {
+        "base": 15,
         "per_level_above_first": 0
     },
     "max_level": 1,
-    "min_cost": {
+    "max_cost": {
         "base": 25,
         "per_level_above_first": 0
     },

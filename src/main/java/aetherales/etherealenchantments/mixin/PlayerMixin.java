@@ -1,6 +1,7 @@
 package aetherales.etherealenchantments.mixin;
 
 import aetherales.etherealenchantments.entitydata.MomentumData;
+import aetherales.etherealenchantments.entitydata.SoulboundInventory;
 import aetherales.etherealenchantments.util.EnchantmentUtil;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.world.InteractionHand;
@@ -20,6 +21,9 @@ import java.util.Optional;
 public abstract class PlayerMixin {
     @Unique
     private MomentumData momentumData = new MomentumData(0, 0, Optional.empty());
+
+    @Unique
+    Optional<SoulboundInventory> soulboundInventory = Optional.empty();
 
     @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;createAttackSource(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/damagesource/DamageSource;"), cancellable = true)
     private void cancelMyAttack(Entity entity, CallbackInfo ci, @Local(name = "attackingItemStack") ItemStack attackingItemStack) {

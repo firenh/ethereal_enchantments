@@ -6,13 +6,13 @@
     },
     "effects": {},
     "max_cost": {
-        "base": 50,
-        "per_level_above_first": 50
+        "base": 35,
+        "per_level_above_first": 5
     },
     "max_level": 4,
     "min_cost": {
         "base": 25,
-        "per_level_above_first": 15
+        "per_level_above_first": 2
     },
     "slots": [
         "any"

@@ -4,20 +4,19 @@
         "translate": "enchantment.ethereal_enchantments.butterfingers_curse",
         "fallback": "Curse of Butterfingers"
     },
-    "effects": {},
-    "max_cost": {
-        "base": 30,
-        "per_level_above_first": 20
+    "min_cost": {
+        "base": 1,
+        "per_level_above_first": 3
     },
     "max_level": 5,
-    "min_cost": {
-        "base": 20,
-        "per_level_above_first": 15
+    "max_cost": {
+        "base": 5,
+        "per_level_above_first": 7
     },
     "slots": [
         "mainhand",
         "offhand"
     ],
     "supported_items": "#ethereal_enchantments:enchantable/all_but_armor",
-    "weight": 1
+    "weight": 2
 }
