@@ -1,0 +1,36 @@
+{
+    "primary_items": "#minecraft:enchantable/melee_weapon",
+    "anvil_cost": 1,
+    "description": {
+        "translate": "enchantment.ethereal_enchantments.nimble",
+        "fallback": "Nimble"
+    },
+    "effects": {
+        "minecraft:attributes": [
+            {
+                "amount": {
+                    "type": "minecraft:linear",
+                    "base": 0.1,
+                    "per_level_above_first": 0.1
+                },
+                "attribute": "minecraft:attack_speed",
+                "id": "ethereal_enchantments:enchantment.efficiency",
+                "operation": "add_value"
+            }
+        ]
+    },
+    "max_cost": {
+        "base": 50,
+        "per_level_above_first": 30
+    },
+    "max_level": 4,
+    "min_cost": {
+        "base": 10,
+        "per_level_above_first": 10
+    },
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "#minecraft:enchantable/weapon",
+    "weight": 3
+}

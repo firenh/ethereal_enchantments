@@ -44,12 +44,12 @@ public class AfflictionImpl {
         }
     }
 
-    private static float proportionToTransfer(int lvl) {
+    public static float proportionToTransfer(int lvl) {
         if (lvl > AFFLICTION_PROPORTIONS.length) return 1;
         return AFFLICTION_PROPORTIONS[lvl - 1];
     }
 
-    private static MobEffectInstance copy(MobEffectInstance effect, int newDuration) {
+    public static MobEffectInstance copy(MobEffectInstance effect, int newDuration) {
         return new MobEffectInstance(
             effect.getEffect(),
             newDuration,

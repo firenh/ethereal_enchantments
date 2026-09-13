@@ -4,6 +4,7 @@ import aetherales.etherealenchantments.registry.EEEnchantments;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -43,7 +44,7 @@ public class EnchantmentUtil {
 
     public static boolean maybeDropHandItem(ItemStack stack, Player player, InteractionHand hand, float butterfingersChancePerLevel) {
         if (unwieldy(stack, player) || butterfingers(stack, player, butterfingersChancePerLevel)) {
-            player.drop(stack, true);
+            player.drop(stack, true, Prediction.SERVER_ONLY);
             player.setItemInHand(hand, ItemStack.EMPTY);
             return true;
         }

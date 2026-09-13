@@ -64,11 +64,11 @@
         "minecraft:hit_block": [
             {
                 "requirements": {
-                    "condition": "minecraft:entity_properties",
                     "entity": "this",
                     "predicate": {
                         "minecraft:entity_type": "minecraft:trident"
-                    }
+                    },
+                    "type": "minecraft:entity_properties"
                 },
                 "effect": {
                     "type": "minecraft:explode",

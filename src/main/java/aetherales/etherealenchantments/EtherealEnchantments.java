@@ -1,5 +1,6 @@
 package aetherales.etherealenchantments;
 
+import aetherales.etherealenchantments.enchantmentcomponents.EEEnchantmentEntityEffect;
 import aetherales.etherealenchantments.impl.EEEvents;
 import aetherales.etherealenchantments.impl.EEServerTicks;
 import net.fabricmc.api.ModInitializer;
@@ -17,7 +18,7 @@ public class EtherealEnchantments implements ModInitializer {
 	public void onInitialize() {
 		EEServerTicks.init();
 		EEEvents.init();
-//		EEEnchantmentEffects.init();
+		EEEnchantmentEntityEffect.init();
 		LOGGER.info("Hello Fabric world!");
 
 
