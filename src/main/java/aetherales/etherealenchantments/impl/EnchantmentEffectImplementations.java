@@ -3,6 +3,7 @@ package aetherales.etherealenchantments.impl;
 import aetherales.etherealenchantments.entitydata.MomentumData;
 import aetherales.etherealenchantments.registry.EEEnchantments;
 import aetherales.etherealenchantments.util.EnchantmentUtil;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -25,6 +26,8 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 public class EnchantmentEffectImplementations {
+
+
     public static void doPostAttack(
         ServerLevel serverLevel,
         Entity victim,

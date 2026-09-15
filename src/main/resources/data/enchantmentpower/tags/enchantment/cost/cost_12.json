@@ -1,6 +1,10 @@
 {
     "values": [
         "ethereal_enchantments:knowledge",
-        "ethereal_enchantments:unwieldiness_curse"
+        "ethereal_enchantments:unwieldiness_curse",
+        "ethereal_enchantments:burdening_curse",
+        "ethereal_enchantments:untethering",
+        "ethereal_enchantments:frictionless",
+        "ethereal_enchantments:bouncy"
     ]
 }

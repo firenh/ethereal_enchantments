@@ -1,0 +1,19 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:book",
+                    "modifier": {
+                        "type": "minecraft:enchant_randomly",
+                        "options": [
+                            "ethereal_enchantments:aerodynamic"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

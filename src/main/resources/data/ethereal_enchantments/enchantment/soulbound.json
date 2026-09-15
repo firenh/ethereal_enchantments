@@ -18,5 +18,6 @@
         "any"
     ],
     "supported_items": "#minecraft:enchantable/vanishing",
+    "exclusive_set": "#ethereal_enchantments:exclusive_set/on_death",
     "weight": 10
 }

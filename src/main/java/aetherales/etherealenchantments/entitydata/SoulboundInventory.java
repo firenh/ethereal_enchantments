@@ -15,6 +15,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.gossip.GossipContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 
 import javax.swing.text.html.Option;
 import java.util.ArrayList;
@@ -54,7 +56,7 @@ public record SoulboundInventory(List<ItemStackWithSlot> items) {
             if (inventory.getItem(stackAndSlot.slot()).isEmpty()) {
                 inventory.setItem(stackAndSlot.slot(), stackAndSlot.stack());
             } else {
-                entity.drop(stackAndSlot.stack(), true, Prediction.SERVER_ONLY);
+                entity.drop(stackAndSlot.stack(), false, Prediction.SERVER_ONLY);
             }
         });
     }
@@ -67,13 +69,13 @@ public record SoulboundInventory(List<ItemStackWithSlot> items) {
         final int size = inventory.getContainerSize();
         ArrayList<ItemStackWithSlot> soulboundItems = new ArrayList<>();
 
-        EtherealEnchantments.LOGGER.info("Saving items!");
-
         for (int i = 0; i < size; i += 1) {
             ItemStack item = inventory.getItem(i);
 
-            if (EnchantmentUtil.getLevel(EEEnchantments.SOULBOUND.identifier(), item.getEnchantments()) > 0) {
-                EtherealEnchantments.LOGGER.info("Saving this item: {}", item);
+            if (
+                EnchantmentUtil.getLevel(EEEnchantments.SOULBOUND.identifier(), item.getEnchantments()) > 0 &&
+                EnchantmentUtil.getLevel(Enchantments.VANISHING_CURSE.identifier(), item.getEnchantments()) == 0
+            ) {
 
                 soulboundItems.add(new ItemStackWithSlot(i, item));
                 inventory.setItem(i, ItemStack.EMPTY);

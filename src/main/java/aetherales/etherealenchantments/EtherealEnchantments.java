@@ -3,6 +3,7 @@ package aetherales.etherealenchantments;
 import aetherales.etherealenchantments.enchantmentcomponents.EEEnchantmentEntityEffect;
 import aetherales.etherealenchantments.impl.EEEvents;
 import aetherales.etherealenchantments.impl.EEServerTicks;
+import aetherales.etherealenchantments.loot.EELootTableModifications;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -19,8 +20,7 @@ public class EtherealEnchantments implements ModInitializer {
 		EEServerTicks.init();
 		EEEvents.init();
 		EEEnchantmentEntityEffect.init();
-		LOGGER.info("Hello Fabric world!");
-
+		EELootTableModifications.init();
 
 //		Registry.register(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, id("transfer_status_effects"), TransferStatusEffects.CODEC);
 
@@ -29,4 +29,8 @@ public class EtherealEnchantments implements ModInitializer {
 	public static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
+	public static Identifier vid(String path) {
+		return Identifier.fromNamespaceAndPath("minecraft", path);
+	}
+
 }

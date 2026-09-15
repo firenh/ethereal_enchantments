@@ -1,0 +1,35 @@
+{
+    "anvil_cost": 1,
+    "description": {
+        "translate": "enchantment.ethereal_enchantments.aerodynamic",
+        "fallback": "Aerodynamic"
+    },
+    "effects": {
+        "minecraft:attributes": [
+            {
+                "attribute": "minecraft:air_drag_modifier",
+                "id": "ethereal_enchantments:enchantment.aerodynamic",
+                "amount": {
+                    "type": "minecraft:linear",
+                    "base": -0.0625,
+                    "per_level_above_first": -0.0625
+                },
+                "operation": "add_multiplied_base"
+            }
+        ]
+    },
+    "max_cost": {
+        "base": 40,
+        "per_level_above_first": 10
+    },
+    "max_level": 4,
+    "min_cost": {
+        "base": 15,
+        "per_level_above_first": 8
+    },
+    "slots": [
+        "armor"
+    ],
+    "supported_items": "#minecraft:enchantable/chest_armor",
+    "weight": 1
+}
