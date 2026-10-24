@@ -46,6 +46,11 @@ public class EnchantmentEffectImplementations {
             if (afflictionLevel > 0) {
                 AfflictionImpl.afflictionImpl(afflictionLevel, source, livingAttacker, victim);
             }
+
+            int discordLevel = EnchantmentUtil.getLevel(EEEnchantments.DISCORD.identifier(), enchantments);
+            if (discordLevel > 0) {
+                DiscordImpl.impl(discordLevel, source, livingAttacker, victim);
+            }
         }
     }
 

@@ -18,9 +18,10 @@ import java.util.Objects;
 
 public class FrenzyImpl {
     public static final Identifier FRENZY_ATTRIBUTE = EtherealEnchantments.id("mainhand/frenzy");
+    public static final Identifier EFFICIENCY_ATTRIBUTE = EtherealEnchantments.vid("enchantment.efficiency/mainhand");
     private static final double MAX_FRENZY_MINING_EFFICIENCY = 30;
     private static final int MAX_LEVEL = 5;
-    private static final double MINING_EFFICIENCY_REQUIRED_TO_INSTAMINE_DEEPLSLATE = 55.28625 - 26; //Efficiency 5 = 26
+    private static final double MINING_EFFICIENCY_REQUIRED_TO_INSTAMINE_DEEPLSLATE = 55.28625 ; //Efficiency 5 = 26
     private static final double PROPORTION_AT_WHICH_INSTAMINE_DEEPSLATE = 1.0 / 5.0;
     private static final double FRENZY_EFFECTIVENESS_AT_CRITICAL_FRACTION = calcFrenzyAttributeIncrease(1, PROPORTION_AT_WHICH_INSTAMINE_DEEPSLATE);
 
@@ -31,7 +32,7 @@ public class FrenzyImpl {
             applyAttributes(0, level, player);
         } else {
             applyAttributes(
-                calcFrenzyAttributeValue(calcFrenzyAttributeIncrease(stack)), level, player
+                calcFrenzyAttributeValue(calcFrenzyAttributeIncrease(stack), player), level, player
             );
         }
     }
@@ -59,7 +60,12 @@ public class FrenzyImpl {
 
     }
 
-    private static double calcFrenzyAttributeValue(double increaseAmount) {
-        return (increaseAmount * MINING_EFFICIENCY_REQUIRED_TO_INSTAMINE_DEEPLSLATE) / FRENZY_EFFECTIVENESS_AT_CRITICAL_FRACTION;
+    private static double calcFrenzyAttributeValue(double increaseAmount, Player player) {
+        double efficiencyValue =
+            player.getAttributes().hasModifier(Attributes.MINING_EFFICIENCY, EFFICIENCY_ATTRIBUTE) ?
+            player.getAttributes().getModifierValue(Attributes.MINING_EFFICIENCY, EFFICIENCY_ATTRIBUTE) :
+            0;
+
+        return Math.max(0, ((increaseAmount * MINING_EFFICIENCY_REQUIRED_TO_INSTAMINE_DEEPLSLATE) / FRENZY_EFFECTIVENESS_AT_CRITICAL_FRACTION) - efficiencyValue);
     }
 }

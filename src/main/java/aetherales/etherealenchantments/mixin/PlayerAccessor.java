@@ -14,6 +14,9 @@ public interface PlayerAccessor {
     @Accessor("momentumData")
     public MomentumData getMomentumData();
 
+    @Accessor("momentumData")
+    public void setMomentumData(MomentumData data);
+
     @Accessor("soulboundInventory")
     public Optional<SoulboundInventory> getSoulboundInventory();
 

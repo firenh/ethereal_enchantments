@@ -55,7 +55,7 @@ public class MomentumData {
 
     public static void tryUpdatePlayerEndOfMine(Player player, Block block) {
         int level = EnchantmentUtil.getLevel(EEEnchantments.MOMENTUM.identifier(), player.getMainHandItem().getEnchantments());
-//        EtherealEnchantments.LOGGER.info("Momentum Level: {}", level);
+        EtherealEnchantments.LOGGER.info("Momentum Level: {}", level);
 
         if (level > 0) {
             updatePlayerEndOfMine(player, block, level);
@@ -68,7 +68,12 @@ public class MomentumData {
         try {
             long time = Objects.requireNonNull(player.level().getServer()).getTickCount();
 
+            if (Objects.isNull(((PlayerAccessor)(Object)player).getMomentumData())) {
+                ((PlayerAccessor)(Object)player).setMomentumData(new MomentumData(0, 0, Optional.empty()));
+            }
+
             MomentumData momentumData = ((PlayerAccessor)(Object)player).getMomentumData();
+
 
             momentumData.updateStreak(
                 BuiltInRegistries.BLOCK.getKey(block),
@@ -77,7 +82,9 @@ public class MomentumData {
 
             momentumData.updateAttribute(player);
 
-        } catch (NullPointerException _ ) {}
+        } catch (NullPointerException e) {
+            EtherealEnchantments.LOGGER.info(e.toString());
+        }
     }
 
     public void updateStreak(Identifier newTarget, long time, int increment) {
@@ -92,9 +99,11 @@ public class MomentumData {
         ) {
             incrementStreak(increment);
             setLastMined(time);
+            EtherealEnchantments.LOGGER.info("Momentum streak: {}", streak);
         } else {
             setTarget(Optional.empty());
             setStreak(0);
+            EtherealEnchantments.LOGGER.info("Momentum streak cleared");
         }
     }
 

@@ -1,0 +1,99 @@
+{
+    "anvil_cost": 2,
+    "description": {
+        "translate": "enchantment.minecraft.bane_of_poultry",
+        "fallback": "Bane of Poultry"
+    },
+    "effects": {
+        "minecraft:post_attack": [
+            {
+                "requirements": {
+                    "type": "minecraft:any_of",
+                    "terms": [
+                        {
+                            "type": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "minecraft:entity_type": "minecraft:chicken"
+                            }
+                        },
+                        {
+                            "type": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "minecraft:vehicle": {
+                                    "minecraft:entity_type": "minecraft:chicken"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "effect": {
+                    "type": "minecraft:explode",
+                    "attribute_to_user": true,
+                    "damage_type": "minecraft:explosion",
+                    "radius": 2.25,
+                    "block_interaction": "none",
+                    "sound": "minecraft:entity.generic.explode",
+                    "small_particle": {
+                        "type": "minecraft:explosion_emitter"
+                    },
+                    "large_particle": {
+                        "type": "minecraft:explosion_emitter"
+                    },
+                    "block_particles": []
+                },
+                "enchanted": "attacker",
+                "affected": "victim"
+            }
+        ],
+        "minecraft:damage": [
+            {
+                "effect": {
+                    "type": "minecraft:add",
+                    "value": {
+                        "type": "minecraft:linear",
+                        "base": 250,
+                        "per_level_above_first": 250
+                    }
+                },
+                "requirements": {
+                    "type": "minecraft:any_of",
+                    "terms": [
+                        {
+                            "type": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "minecraft:entity_type": "minecraft:chicken"
+                            }
+                        },
+                        {
+                            "type": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "minecraft:vehicle": {
+                                    "minecraft:entity_type": "minecraft:chicken"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "max_cost": {
+        "base": 25,
+        "per_level_above_first": 8
+    },
+    "max_level": 1,
+    "min_cost": {
+        "base": 5,
+        "per_level_above_first": 8
+    },
+    "primary_items": "#minecraft:enchantable/melee_weapon",
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "#minecraft:enchantable/durability",
+    "weight": 1
+}

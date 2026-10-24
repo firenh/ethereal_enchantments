@@ -34,10 +34,19 @@
                 },
                 "enchanted": "attacker",
                 "requirements": {
-                    "type": "minecraft:damage_source_properties",
-                    "predicate": {
-                        "is_direct": true
-                    }
+                    "type": "minecraft:all_of",
+                    "terms": [
+                        {
+                            "type": "minecraft:damage_source_properties",
+                            "predicate": {
+                                "is_direct": true
+                            }
+                        },
+                        {
+                            "type": "minecraft:random_chance",
+                            "chance": 0.025
+                        }
+                    ]
                 }
             },
             {
@@ -68,10 +77,19 @@
                 },
                 "enchanted": "attacker",
                 "requirements": {
-                    "type": "minecraft:damage_source_properties",
-                    "predicate": {
-                        "is_direct": true
-                    }
+                    "type": "minecraft:all_of",
+                    "terms": [
+                        {
+                            "type": "minecraft:damage_source_properties",
+                            "predicate": {
+                                "is_direct": true
+                            }
+                        },
+                        {
+                            "type": "minecraft:random_chance",
+                            "chance": 0.025
+                        }
+                    ]
                 }
             }
         ]
@@ -90,5 +108,5 @@
         "mainhand"
     ],
     "supported_items": "#minecraft:enchantable/fire_aspect",
-    "weight": 1
+    "weight": 3
 }

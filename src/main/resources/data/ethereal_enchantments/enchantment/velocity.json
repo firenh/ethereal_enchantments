@@ -1,0 +1,22 @@
+{
+    "anvil_cost": 2,
+    "description": {
+        "translate": "enchantment.ethereal_enchantments.velocity",
+        "fallback": "Velocity"
+    },
+    "max_cost": {
+        "base": 25,
+        "per_level_above_first": 8
+    },
+    "max_level": 5,
+    "min_cost": {
+        "base": 5,
+        "per_level_above_first": 8
+    },
+    "primary_items": "#minecraft:enchantable/crossbow",
+    "slots": [
+        "mainhand"
+    ],
+    "supported_items": "#minecraft:enchantable/crossbow",
+    "weight": 7
+}

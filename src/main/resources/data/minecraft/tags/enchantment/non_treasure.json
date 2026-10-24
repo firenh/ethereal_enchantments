@@ -6,9 +6,14 @@
         "ethereal_enchantments:knowledge",
         "ethereal_enchantments:stunning",
         "ethereal_enchantments:frenzy",
+        "ethereal_enchantments:frictionless",
         "ethereal_enchantments:venomous",
         "ethereal_enchantments:momentum",
         "ethereal_enchantments:nimble",
-        "ethereal_enchantments:bounding"
+        "ethereal_enchantments:bounding",
+        "ethereal_enchantments:reach",
+        "ethereal_enchantments:hurricane",
+        "ethereal_enchantments:discord",
+        "ethereal_enchantments:velocity"
     ]
 }
