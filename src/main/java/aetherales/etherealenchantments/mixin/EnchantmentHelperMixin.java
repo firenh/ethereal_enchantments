@@ -1,8 +1,10 @@
 package aetherales.etherealenchantments.mixin;
 
 import aetherales.etherealenchantments.impl.EnchantmentEffectImplementations;
+import aetherales.etherealenchantments.registry.EEEnchantments;
 import aetherales.etherealenchantments.util.EnchantmentUtil;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -19,6 +21,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.function.Consumer;
 
@@ -64,6 +67,17 @@ public class EnchantmentHelperMixin {
             hitLocation,
             hitBlock,
             onBreak
+        );
+    }
+
+    @Inject(method = "isImmuneToDamage", at = @At("RETURN"), cancellable = true)
+    private static void isImmuneToDamage(ServerLevel serverLevel, LivingEntity victim, DamageSource source, CallbackInfoReturnable<Boolean> cir) {
+        cir.setReturnValue(
+            cir.getReturnValue() || (
+                EnchantmentUtil.getLevel(EEEnchantments.BOUNCY.identifier(), victim.getItemBySlot(EquipmentSlot.FEET).getEnchantments()) > 0
+                && source.is(DamageTypeTags.IS_FALL)
+                && !victim.isSuppressingBounce()
+            )
         );
     }
 }

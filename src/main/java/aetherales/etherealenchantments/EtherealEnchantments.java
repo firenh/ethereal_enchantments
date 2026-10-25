@@ -3,6 +3,7 @@ package aetherales.etherealenchantments;
 import aetherales.etherealenchantments.enchantmentcomponents.EEEnchantmentEntityEffect;
 import aetherales.etherealenchantments.impl.EEEvents;
 import aetherales.etherealenchantments.impl.EEServerTicks;
+import aetherales.etherealenchantments.impl.EnchantmentEffectImplementations;
 import aetherales.etherealenchantments.loot.EELootTableModifications;
 import net.fabricmc.api.ModInitializer;
 
@@ -21,6 +22,7 @@ public class EtherealEnchantments implements ModInitializer {
 		EEEvents.init();
 		EEEnchantmentEntityEffect.init();
 		EELootTableModifications.init();
+		EnchantmentEffectImplementations.init();
 
 //		Registry.register(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, id("transfer_status_effects"), TransferStatusEffects.CODEC);
 

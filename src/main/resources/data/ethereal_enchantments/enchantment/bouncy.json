@@ -12,22 +12,6 @@
                 "amount": 1,
                 "operation": "add_value"
             }
-        ],
-        "minecraft:damage_immunity": [
-            {
-                "requirements": {
-                    "type": "minecraft:damage_source_properties",
-                    "predicate": {
-                        "tags": [
-                            {
-                                "id": "#minecraft:is_fall",
-                                "expected": true
-                            }
-                        ]
-                    }
-                },
-                "effect": {}
-            }
         ]
     },
     "max_cost": {

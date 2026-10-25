@@ -1,9 +1,13 @@
 package aetherales.etherealenchantments.impl;
 
+import aetherales.etherealenchantments.EtherealEnchantments;
 import aetherales.etherealenchantments.entitydata.MomentumData;
+import aetherales.etherealenchantments.mixin.PlayerAccessor;
 import aetherales.etherealenchantments.registry.EEEnchantments;
 import aetherales.etherealenchantments.util.EnchantmentUtil;
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -12,10 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantedItemInUse;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.ItemEnchantments;
-import net.minecraft.world.item.enchantment.TargetedConditionalEffect;
+import net.minecraft.world.item.enchantment.*;
 import net.minecraft.world.item.enchantment.effects.EnchantmentEntityEffect;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -26,7 +27,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 public class EnchantmentEffectImplementations {
-
+    public static void init() {
+        ServerLivingEntityEvents.AFTER_DAMAGE.register(EnchantmentEffectImplementations::afterDamageTaken);
+    }
 
     public static void doPostAttack(
         ServerLevel serverLevel,
@@ -51,6 +54,11 @@ public class EnchantmentEffectImplementations {
             if (discordLevel > 0) {
                 DiscordImpl.impl(discordLevel, source, livingAttacker, victim);
             }
+
+            int vampirismLevel = EnchantmentUtil.getLevel(EEEnchantments.VAMPIRISM.identifier(), enchantments);
+            if (vampirismLevel > 0) {
+                VampirismImpl.impl(vampirismLevel, source, livingAttacker, victim);
+            }
         }
     }
 
@@ -69,5 +77,21 @@ public class EnchantmentEffectImplementations {
             MomentumData.updateTime(player, weapon);
         }
     }
+
+    public static void afterDamageTaken(LivingEntity living, DamageSource source, float baseDamage, float damage, boolean blocked) {
+        EtherealEnchantments.LOGGER.info("eifhnsejfnbef");
+
+        // only applies to players
+
+        if (!(living instanceof Player player)) return;
+
+        int adrenalineLevel = EnchantmentUtil.getSingleSlotArmorLevel(EEEnchantments.ADRENALINE.identifier(), player, EquipmentSlot.CHEST);
+        if (adrenalineLevel > 0) {
+            AdrenalineImpl.impl(adrenalineLevel, player, source);
+        }
+
+        ((PlayerAccessor)(Object)player).setLastHurtTime(player.level().getGameTime());
+    }
+
 
 }

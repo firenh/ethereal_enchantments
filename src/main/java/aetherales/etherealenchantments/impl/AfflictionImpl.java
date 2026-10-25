@@ -1,5 +1,6 @@
 package aetherales.etherealenchantments.impl;
 
+import aetherales.etherealenchantments.EtherealEnchantments;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;

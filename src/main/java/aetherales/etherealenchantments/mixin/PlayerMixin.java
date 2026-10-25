@@ -4,7 +4,9 @@ import aetherales.etherealenchantments.entitydata.MomentumData;
 import aetherales.etherealenchantments.entitydata.SoulboundInventory;
 import aetherales.etherealenchantments.util.EnchantmentUtil;
 import com.llamalad7.mixinextras.sugar.Local;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -14,6 +16,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
@@ -24,6 +27,9 @@ public abstract class PlayerMixin {
 
     @Unique
     Optional<SoulboundInventory> soulboundInventory = Optional.empty();
+
+    @Unique
+    long lastHurtTime = 0;
 
     @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;createAttackSource(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/damagesource/DamageSource;"), cancellable = true)
     private void cancelMyAttack(Entity entity, CallbackInfo ci, @Local(name = "attackingItemStack") ItemStack attackingItemStack) {

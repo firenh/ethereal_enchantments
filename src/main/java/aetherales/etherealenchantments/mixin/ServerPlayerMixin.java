@@ -1,6 +1,8 @@
 package aetherales.etherealenchantments.mixin;
 
 import aetherales.etherealenchantments.entitydata.SoulboundInventory;
+import aetherales.etherealenchantments.impl.AdrenalineImpl;
+import com.mojang.serialization.Codec;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
@@ -22,6 +24,10 @@ public class ServerPlayerMixin {
         } else {
             ((PlayerAccessor) (Object) this).setSoulboundInventory(Optional.empty());
         }
+
+        ((PlayerAccessor) this).setLastHurtTime(
+            input.getLongOr(AdrenalineImpl.NBT_KEY_FOR_LAST_HURT_TIME, 0L)
+        );
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At("RETURN"))
@@ -33,5 +39,7 @@ public class ServerPlayerMixin {
                 ((PlayerAccessor) (Object) this).getSoulboundInventory().get()
             );
         }
+
+        output.putLong(AdrenalineImpl.NBT_KEY_FOR_LAST_HURT_TIME, ((PlayerAccessor) this).getLastHurtTime());
     }
 }

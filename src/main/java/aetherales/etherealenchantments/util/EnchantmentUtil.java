@@ -4,8 +4,10 @@ import aetherales.etherealenchantments.registry.EEEnchantments;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.Prediction;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -52,5 +54,17 @@ public class EnchantmentUtil {
         return false;
     }
 
+    public static int getSingleSlotArmorLevel(Identifier enchantment, LivingEntity entity, EquipmentSlot slot) {
+        return getLevel(enchantment, entity.getItemBySlot(slot).getEnchantments());
+    }
 
+    public static int getTotalArmorLevel(Identifier enchantment, LivingEntity entity) {
+        int level = 0;
+
+        for (EquipmentSlot slot : EquipmentSlot.VALUES) {
+            level += getLevel(enchantment, entity.getItemBySlot(slot).getEnchantments());
+        }
+
+        return level;
+    }
 }

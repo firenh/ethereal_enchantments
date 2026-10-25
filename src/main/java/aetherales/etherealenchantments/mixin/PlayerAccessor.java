@@ -25,4 +25,11 @@ public interface PlayerAccessor {
 
     @Accessor("inventory")
     public void setInventory(Inventory inventory);
+
+    @Accessor("lastHurtTime")
+    public long getLastHurtTime();
+
+    @Accessor("lastHurtTime")
+    public void setLastHurtTime(long lastHurtTime);
+
 }

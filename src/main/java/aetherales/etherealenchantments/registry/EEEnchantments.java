@@ -26,6 +26,10 @@ public class EEEnchantments {
     public static final ResourceKey<Enchantment> SOULBOUND = key("soulbound");
     public static final ResourceKey<Enchantment> DISCORD = key("discord");
     public static final ResourceKey<Enchantment> VELOCITY = key("velocity");
+    public static final ResourceKey<Enchantment> VAMPIRISM = key("vampirism");
+    public static final ResourceKey<Enchantment> ADRENALINE = key("adrenaline");
+    public static final ResourceKey<Enchantment> BOUNCY = key("bouncy");
+
 
 
     private static ResourceKey<Enchantment> key(final String id) {
