@@ -1,0 +1,15 @@
+{
+    "values": [
+        "#minecraft:enchantable/durability",
+        "minecraft:compass",
+        "minecraft:carved_pumpkin",
+        "#minecraft:skulls",
+        "#minecraft:bundles",
+        "#minecraft:shulker_boxes",
+        "minecraft:written_book",
+        {
+            "id": "improved-maps:atlas",
+            "required": false
+        }
+    ]
+}
