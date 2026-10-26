@@ -79,7 +79,6 @@ public class EnchantmentEffectImplementations {
     }
 
     public static void afterDamageTaken(LivingEntity living, DamageSource source, float baseDamage, float damage, boolean blocked) {
-        EtherealEnchantments.LOGGER.info("eifhnsejfnbef");
 
         // only applies to players
 
