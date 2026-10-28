@@ -6,6 +6,7 @@
         "ethereal_enchantments:untethering",
         "ethereal_enchantments:reach",
         "ethereal_enchantments:bouncy",
-        "ethereal_enchantments:aerodynamic"
+        "ethereal_enchantments:aerodynamic",
+        "ethereal_enchantments:frictionless"
     ]
 }
