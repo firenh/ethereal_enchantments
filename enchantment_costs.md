@@ -46,8 +46,6 @@ feather_falling<br>
 venomous<br>
 soulbound<br>
 bounding<br>
-aerodynamic<br>
-frictionless<br>
 
 ### **Cost: 9**
 unbreaking<br>
@@ -86,6 +84,8 @@ knowledge<br>
 untethering<br>
 bouncy<br>
 reach<br>
+frictionless<br>
+aerodynamic<br>
 
 ### **Cost: 15**
 sharpness<br>
