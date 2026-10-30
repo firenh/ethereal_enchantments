@@ -80,6 +80,10 @@ public class EnchantmentEffectImplementations {
 
     public static void afterDamageTaken(LivingEntity living, DamageSource source, float baseDamage, float damage, boolean blocked) {
 
+        int warpingLevel = EnchantmentUtil.getSingleSlotArmorLevel(EEEnchantments.WARPING.identifier(), living, EquipmentSlot.CHEST);
+        if (warpingLevel > 0) {
+            WarpingImpl.impl(warpingLevel, living, source);
+        }
         // only applies to players
 
         if (!(living instanceof Player player)) return;

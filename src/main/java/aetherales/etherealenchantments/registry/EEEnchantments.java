@@ -29,6 +29,7 @@ public class EEEnchantments {
     public static final ResourceKey<Enchantment> VAMPIRISM = key("vampirism");
     public static final ResourceKey<Enchantment> ADRENALINE = key("adrenaline");
     public static final ResourceKey<Enchantment> BOUNCY = key("bouncy");
+    public static final ResourceKey<Enchantment> WARPING = key("warping");
 
 
 
