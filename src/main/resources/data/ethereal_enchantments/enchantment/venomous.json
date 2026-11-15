@@ -35,13 +35,13 @@
         ]
     },
     "max_cost": {
-        "base": 60,
+        "base": 20,
         "per_level_above_first": 20
     },
     "max_level": 2,
     "min_cost": {
         "base": 10,
-        "per_level_above_first": 20
+        "per_level_above_first": 15
     },
     "primary_items": "#minecraft:enchantable/melee_weapon",
     "slots": [

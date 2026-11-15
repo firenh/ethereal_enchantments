@@ -5,6 +5,7 @@
     "mixins": [
         "CrossbowItemMixin",
         "EnchantmentHelperMixin",
+        "FishingHookMixin",
         "ItemMixin",
         "ItemStackMixin",
         "LivingEntityMixin",

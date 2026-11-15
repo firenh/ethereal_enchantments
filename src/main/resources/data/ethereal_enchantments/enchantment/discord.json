@@ -12,7 +12,7 @@
     "max_level": 3,
     "min_cost": {
         "base": 5,
-        "per_level_above_first": 8
+        "per_level_above_first": 5
     },
     "primary_items": "#ethereal_enchantments:enchantable/melee_weapon_and_trident",
     "slots": [
