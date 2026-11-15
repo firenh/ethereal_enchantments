@@ -11,7 +11,8 @@ butterfingers_curse: -15<br>
 atrophy_curse: -20<br>
 obliteration_curse: -40<br>
 
-
+### **Cost: 1**
+bane_of_poultry
 
 ### **Cost: 2**
 frost_walker
