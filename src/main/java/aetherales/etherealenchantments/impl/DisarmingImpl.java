@@ -28,7 +28,7 @@ public class DisarmingImpl {
     }
 
     private static float disarmingChance(int level) {
-        return 0.5f * ((float) level) / 3;
+        return 0.1f * ((float) level) / 3;
     }
 
     private static void dropItemFromEntity(LivingEntity entity) {
